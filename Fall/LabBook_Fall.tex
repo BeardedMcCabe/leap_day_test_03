@@ -1,0 +1,127 @@
+% ----------------------------------------------------------------------
+% General Physics Lab (Fall)
+%
+% Student lab manual
+% ----------------------------------------------------------------------
+
+\iftrue % Defaults are for printed copy
+\documentclass[11pt]{book}
+\else   % Tweak for PDF copy
+\documentclass[12pt,oneside,openany]{book}
+\fi
+
+\usepackage{LabManual}      % Include shared lab manual definitions
+
+\usepackage{geometry}       % See geometry.pdf to learn the layout options.
+\geometry{letterpaper}      % ... or a4paper or a5paper or ...
+%\geometry{landscape}       % Activate for rotated page geometry
+
+\usepackage{nicefrac}       % optional packages
+%\usepackage{xcolor}
+
+\usepackage{appendix}
+
+% --------------------------------------------------------------------
+% Generic document formatting
+
+\setlength{\parskip}{0.5\baselineskip}
+\setlength{\textheight}{625 pt} % 9 inches?
+\setlength{\itemsep}{-5pt}
+\raggedbottom
+
+% ======================================================================
+
+\title{\bf\sc General Physics Laboratory Manual [Mechanics]}
+\author{Department of Physics\\ 
+        Fairfield University \\ \\ \\ \\ NAME: \underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} \\ \\
+        Lab Day (circle):~~~~Mon~~~~Tues~~~~Wed~~~~Thurs~~~~Fri \\ \\
+        Lab Start Time: \underline{~~~~~~~~~~~~~~~~~~~~~~~~} \\ \\ 
+        }
+\date{Fall 2025}      % Manually match to current semester
+
+\begin{document}
+\maketitle
+
+
+% --------------------------------------
+% Auto-generated front matter
+
+\pagenumbering{roman}
+
+
+\tableofcontents
+\let\cleardoublepage\clearpage
+\include{Introduction}            % Introduction
+\include{Fall/Introduction-OrderOfLab}
+
+
+% For the experiments, use normal page numbering.  Resets page count.
+
+\pagenumbering{arabic}
+\sectionsBody
+
+% Experiments.  You can include the files in any order you like, but
+% the internal references implicitly assume the file name don't change.
+
+\setcounter{experiment}{-1}    % Restart experiment numbering
+
+%\include{Experiment00} % M-0: Learn to Lab
+%\include{Experiment01} % M-1: Vector Table
+%\include{Experiment02} % M-2: Measurement of the g (air track)
+%\include{Experiment03} % M-2: Measurement of the g (air track)
+%\include{Experiment08} % M-4: Centripetal Force
+%\include{Experiment04} % M-5: Conservation of Energy
+%\include{Experiment05} % M-6: The Ballistic Pendulum and Projectile Motion
+%\include{Experiment06} % M-7: Conservation of Linear Momentum
+%\include{Experiment09} % M-8: Rotational Motion
+%\include{Experiment07} % M-9: Harmonic Motion
+%%\setcounter{experiment}{0}    % Restart experiment numbering
+%\include{Experiment10} % H-1: Ideal Gas Law
+%\include{Experiment03} % M-3: The Measurement of ${g}$ with a Simple Pendulum
+
+
+\include{Exp00_LearnToLab}
+%\newpage
+%\text{ }
+\include{Exp01_VectorTable}
+\newpage
+\text{ }
+\include{Exp02_AccelG_Track}
+\newpage
+\text{ }
+\include{Exp03_SimpleProjectile}
+\include{Exp04_CentripetalForce}
+\newpage
+\text{ }
+\include{Exp05_ConsEnergy_Track}
+\newpage
+\text{ }
+\include{Exp06_BallisticPend_Projectile}
+\include{Exp07_calc_1171L_RotMotion}
+\setcounter{experiment}{6}    % Restart experiment numbering
+\include{Exp07_life_1145L_IdealGasLaw}
+\newpage
+\text{ }
+\include{Exp08_FluidPhysics}
+\include{Exp09_SimpleHarmonicMotion}
+\include{Exp10_SimplePendulum}
+%\newpage
+%\text{ }
+
+
+
+%\include{z_TestingYourUnderstanding_NIXEDfrombook}
+
+
+% --------------------------------------
+% Front matter proper
+
+\sectionsFront
+
+\include{VernierCalipers}         % VernierCalipers
+\include{ErrorAnalysis}           % ErrorAnalysis
+\include{GraphicalRepresentation} % GraphicalRepresentation
+\include{DataAcquisition}         % DataAcquisition
+
+% Lab data tables are now a separate document
+\end{document}

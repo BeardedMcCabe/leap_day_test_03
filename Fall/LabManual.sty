@@ -1,0 +1,133 @@
+% ----------------------------------------------------------------------
+% Put all the lab manual declarations into one easy-to-manage file
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{LabManual}[2023/05/29 Fairfield Lab Manual formatting]
+
+% ----------------------------------------------------------------------
+% Amsmath and fancyhdr are used internally and are thus truly mandatory
+\RequirePackageWithOptions{amsmath}
+\RequirePackageWithOptions{fancyhdr}
+
+% Graphics and SI Units packages aren't used here, but are
+% still just assumed to be available.
+\usepackage[thinspace,thinqspace]{SIunits}
+\usepackage{graphicx}
+
+% ----------------------------------------------------------------------
+% The experiment counter is used for labelling.  It can be safely reset
+% at the end of a chapter if desired.
+
+\newcounter{experiment}
+\setcounter{experiment}{0}
+  
+% ----------------------------------------------------------------------
+% Fancy chapters and headers.  
+
+% Chapter numbering, fake "M-X" style numbers.  The first argument is
+% the leading letter, the second is the chapter heading.
+%
+% If the first argument is blank, then this is assumed to be front
+% matter like the Introduction or the Error Analysis section.
+  
+\newcommand{\labChapter}[2]{%
+  \if#1\relax
+  % Empty prefix, this is front-matter
+  \chapter*{#2}
+  \chaptermark{#2}
+  \addcontentsline{toc}{chapter}{#2}
+  \else
+  % Prefix found, this is an actual experiment
+%
+  % first increment the counter
+  \stepcounter{experiment}
+%
+  % Step the chapter counter for figure and equation numbering.
+  % This isn't done with \chapter*{}, so I have to do it manually.
+  \refstepcounter{chapter}
+%
+  % Print an un-numbered chapter, input includes numbering.
+  \chapter*{#1-\theexperiment: #2}
+%
+  % Manually set the chapter mark (which updates the page heading)
+  \chaptermark{#1-\theexperiment: #2}
+%
+  % Add a line to the table of contents
+  \addcontentsline{toc}{chapter}{#1-\theexperiment: #2}
+  \fi
+}
+
+% --------------------------------------
+% Headers and footers.  I've reworked these to use chaptermarks
+% instead of manually resetting every time the chapter changes.
+
+% Fancy headers and footers via the fancyhdr package.  For now, the
+% whole document uses the same style.  Maybe someday I'll create a
+% new page style for the front matter.
+
+\pagestyle{fancy}                   % Use default style
+
+% Redefine the ``fancy'' page style
+\fancyhf{}        % clear default settings
+\fancyhead[LE,RO]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+% My header is going to need a bit more room.  Shrink the body text
+% space to match.
+\addtolength{\headheight}{ 1.75pt}
+\addtolength{\textheight}{-1.75pt}
+
+% Chapter marks should be italicized.
+\renewcommand{\chaptermark}[1]{\markboth{\textit{#1}}{}}
+
+% --------------------------------------
+% Chapter and section formatting in the body of the text.  In the front
+% chapters, the "0." chapter part won't be printed so you just see the
+% section number.  In the experiements, instead of the chapter, print
+% the [adjustable] experiment number.
+%
+% Note: don't try to add "M-" or "H-" here, the spacing assumes a single
+% numerical digit throught the document class.
+
+\newcommand{\sectionsFront}{% Section numbering for front matter
+  \renewcommand{\thesection}{\arabic{section}}}
+
+\newcommand{\sectionsBody}{%  Restore normal section numbering
+  \renewcommand{\thesection}{\theexperiment.\arabic{section}}}
+
+% --------------------------------------
+% By defaults, the table of contents forces the heading to be capitalized.
+% I want it left lower-case but italicized, so fix that here.
+%
+% Template copied out of book.cls.
+
+\makeatletter	% begin black magic
+\renewcommand\tableofcontents{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\contentsname
+        \markboth{\textit{\contentsname}}{\textit{\contentsname}}}%
+    \@starttoc{toc}%
+    \if@restonecol\twocolumn\fi
+}
+\makeatother	% end black magic
+
+% Equation numbers follow chapter numbers (requires amsmath)
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+
+% Chapters and sections are numbered, but subsections down only print
+% their label and can't be used in references.
+\setcounter{secnumdepth}{1}
+
+% Likewise, suppress subsections in the table of contents
+\setcounter{tocdepth}{1}
+
+% Display vectors as bold instead of arrows (requires amsmath?).
+% This looks nicer and it follows the textbooks.
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+%% End of lab manual declarations

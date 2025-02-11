@@ -1,0 +1,281 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                  %
+%                       Experiment M-7             %
+%        Conservation of Linear Momentum           %
+%                                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\labChapter{M}{Conservation of Linear Momentum}
+\label{lab:M7}
+
+% Introduction
+\section{Introduction}
+
+A moving object possesses a quality that causes it to exert a force upon anything that tries to stop it.  In addition, the more massive the object is, the more difficulty we have in stopping it.  This vector quality of a moving body is the momentum of the body.  It is defined as
+\[
+\mbox{momentum} = \vec{p} = m \,\vec{v}.
+\]
+The law of conservation of momentum plays an important role in physics.  In this experiment we study this law and see how it helps us to understand the behavior of two colliding bodies.
+
+
+% Background
+\section{Background}
+
+Newton's Second Law states that the force on an object is equal to the time rate of change of the momentum of that object.  Symbolically,
+\begin{equation}
+  \label{eq:M07Feqdpdt}
+  \vec{F} = m \,\vec{a} = m \frac{{\rm d}\vec{v}}{{\rm d}t} = \frac{{\rm d}\vec{p}}{{\rm d}t}.
+\end{equation}
+The same law is true for a system of particles where $\vec{F}$ is the vector sum of the forces acting on the individual particles of the system and $\vec{p}$ is the vector sum of their momenta.
+
+Consider two objects of masses $m_1$ and $m_2$ moving toward each other with velocity $v_1$ and $v_2$ respectively.  Let $v_1^\prime$ and $v_2^\prime$ be their final speeds after collision has occurred.
+Thus
+\[
+\mbox{Total momentum before collision} = m_1 \,\vec{v}_1 + m_2 \,\vec{v}_2
+\]
+and
+\[
+\mbox{Total momentum after collision} =
+m_1 \,\vec{v}_1^\prime + m_2 \,\vec{v}_2^\prime.
+\]
+
+During the collision each object exerts a force on the other.  $\vec{F}_{1,2}$ is the force exerted by $m_1$ on $m_2$ and $\vec{F}_{2,1}$ is the force exerted by $m_2$ on $m_1$.  By Newton's third law $\vec{F}_{2,1} = - \vec{F}_{1,2}$.  They are an action-reaction pair.  These \underline{internal} forces of the system cancel and the vector total of all the internal forces is zero.
+
+If there are no other forces present (\underline{external forces}), it follows from Eqn.~\ref{eq:M07Feqdpdt} that ${\rm d}\vec{p} / {\rm d}t = 0$ and therefore $\vec{p} = \mbox{constant}$.  Remember that momentum is a vector quantity!
+
+Consider a collision between two particles: the initial momentum, $\vec{p}_i$, before the collision is
+\[
+\vec{p}_i = \vec{p}_1 + \vec{p}_2
+\]
+or
+\begin{equation}
+  \label{eq:M07pi}
+  \vec{p}_i = m_1 \,\vec{v}_1 + m_2 \,\vec{v}_2
+\end{equation}
+where a velocity toward the right will be taken as positive and one toward the left as negative.  Similarly the final momentum is
+\begin{equation}
+  \label{eq:M07pf}
+  \vec{p}_f = m_1 \,\vec{v}_1^\prime + m_2 \,\vec{v}_2^\prime.
+\end{equation}
+If no external forces are acting, then momentum is conserved and $\vec{p}_i = \vec{p}_f$, or
+\begin{equation}
+  \label{eq:M07conservation}
+  m_1 \,\vec{v}_1 + m_2 \,\vec{v}_2 = m_1 \,\vec{v}_1^\prime + m_2 \,\vec{v}_2^\prime.
+\end{equation}
+
+% Testing your Understanding
+\section{Experimental Procedure}
+
+\subsection{Setting up the PASCO Capstone Data Acquisition}
+The data acquisition system \textbf{Capstone} will record the data collected by two photogate sensors. See page~\ref{sec:SettingUpHardware} for guidance. The photogate will measure the time during which the lightbeam in the sensor is blocked. By telling \textbf{Capstone} how long the index card attached to the gliders is, the system can determine the speed of the glider as it moves through the photogate. Before you start you therefore need to set a few parameters in the computer program.
+
+\begin{itemize}
+\item[$\triangleright$] The two photogates should be connected to a digital converter (the rectangular blue box), which has a USB connector on the other end. Plug the USB connector into the computer.
+\item[$\triangleright$] Select \textbf{Hardware Setup} in the menu on the left-hand side on the \textbf{Capstone} interface. You should have an image of the digital converter appear.
+\item[$\triangleright$] With the mouse click on one of the two black dots on the image of the digital converter and select the photogate. Repeat also for the second black dot.
+\item[$\triangleright$] Once you have both photogates appear in the image, click on \textbf{Timer Setup}. The program will now guide you through the steps to set up the sensor.
+  \begin{itemize}
+  \item Step 1: Choose \textbf{Pre-configured timer}. Click \textbf{Next}.
+  \item Step 2: Make sure that both photogates are selected with a check mark. Click \textbf{Next}.
+  \item Step 3: Choose the option \textbf{Collision (Single Flag)}. Click \textbf{Next}.
+  \item Step 4: Select only \textbf{Speed in Gate 1} and \textbf{Speed in Gate 2}. De-select all other options. Click \textbf{Next}.
+  \item Step 5: Measure the length of the ``flag'' (the length of the index card on the glider) and input the value (in \textbf{meters}!) into the provided field after \textbf{Flag Length}. Click \textbf{Next}.
+  \item Step 6: You may leave the default name of the timer. Click \textbf{Finish}.
+  \end{itemize}
+\item[$\triangleright$] You are now ready to collect data. Close the setup window by clicking on the \textbf{Timer Setup} button again.
+\item[$\triangleright$] On the right-hand side of the \textbf{Capstone} program you will see several possible ways to display your data. Click and drag the \textbf{Table}-setting to the main canvas to create a data table. By default the data table should have 2 columns. Note, that you can also double-click on the \textbf{Table}-setting to create the data table.
+\item[$\triangleright$] In each column you will see a box that says \textbf{$<$Select Measurement$>$}. Use the mouse to click on the box and select \textbf{Speed in Gate 1, Ch1:1} in one column and \textbf{Speed in Gate 2, Ch1:2} in the other column.
+\item[$\triangleright$] The setup is now complete.
+\end{itemize}
+
+% Equal Masses
+\subsection{Collision between Two Equal Masses}
+
+\begin{itemize}
+  % Equal Masses, One at Rest
+\item[I.] A glider traveling with speed $\vec{v}_1$ collides with an identical glider at rest. It can be shown that at the instant of collision the first glider will stop, imparting all its momentum to the second glider.  In order to experimentally verify that momentum is conserved, it is necessary to determine the velocities of the individual gliders before and after the collision.
+  
+  If the mass of the first glider is $m_1$ and the mass of the second glider is $m_2$, conservation of momentum, Eqn.~\ref{eq:M07conservation} must be true.  Since glider \#2 is initially at rest, $\vec{v}_2 = 0$.  After the collision, the final momentum of the system is $m_1 v_1^\prime + m_2 v_2^\prime$ with $\vec{v}_1^\prime = 0$ if $m_1 = m_2$.  Our momentum conservation equation can now be expressed as
+  \[ 
+  m_1\, \vec{v}_1 = m_2\, \vec{v}_2^\prime.
+  \]
+
+  \begin{itemize}
+  \item[$\triangleright$] Turn on the air track blower and allow it to run 3 minutes before starting the experiment.
+  \item[$\triangleright$] Make sure the track is level by placing a glider at rest on it near the center and observing if it accelerates to either side.
+  \item[$\triangleright$] Adjust the leveling screw on the single leg side as needed.
+  \item[$\triangleright$] Now position one of the smaller gliders (glider \#2) on the track near the center.  %Find the exact position of the glider using the scale on the track because the glider must be returned to this location for future trials.
+  \item[$\triangleright$] Start the data collection on the \textbf{Capstone} program by pressing the red \textbf{Record} button. Once active the \textbf{Record} button will switch from a circle to a square. This indicates that the data acquisition is active and is recording data.
+  \item[$\triangleright$] Place the other glider (glider \#1) of similar size on the track to the left of the left photogate and \underline{gently} launch it towards the bumper at the left end of the track.
+  \item[$\triangleright$] Let the two gliders collide and wait until the glider \#2 has fully passed through the second photogate.
+  \item[$\triangleright$] Stop the data collection on the \textbf{Capstone} program by pressing the \textbf{Record} button again. The button will switch from a square back to a circle again.
+  \item[$\triangleright$] The speed of glider \#1 before the collision ($v_1$) and the speed of glider \#2 after the collision ($v_2^\prime$) are displayed in the \textbf{Pasco} data table. Note the results in your data table.
+  \item[$\triangleright$] Using a triple beam balance, find the masses of both gliders.  Calculate the initial momentum, $\vec{p}_{\mbox{tot}} = m_1 \vec{v}_1$, and compare to the final momentum , $\vec{p}_{\mbox{tot}}^\prime = m_2 \vec{v}_2^\prime$. Note all values in your spreadsheet.
+  \item[$\triangleright$] Calculate the initial energy, $E_{\mbox{tot}} = \nicefrac{1}{2}\, m_1 (v_1)^2$, and compare to the final energy, $E_{\mbox{tot}}^\prime = \nicefrac{1}{2}\, m_2 (v_2^\prime)^2$. Note all values in your spreadsheet.
+  \item[$\triangleright$] Perform this part a total of 3 times.
+  \end{itemize}
+
+  % Equal Masses, Both Moving
+\item[II.] In this case both gliders will be traveling towards each other with velocities $\vec{v}_1$ and $\vec{v}_2$ before they collide in the middle of the track. As they impart momentum onto each other their velocities will change to $\vec{v}_1^\prime$ and $\vec{v}_2^\prime$ after the collision. It is important to note that the direction of the velocities has to be included here as well. This is achieved by using a positive sign for the velocity if the glider moves to the right and a negative sign if the glider moves to the left.
+  
+  \textbf{VERY important}: The data acquisition will \textbf{not} give you the sign as it only records the speed, not the velocity of the gliders. You will need to include the sign for each velocity ``by hand''.
+  
+  As before momentum conservation requires that Eqn.~\ref{eq:M07conservation} be true, where none of the velocities will be zero this time.
+
+  \begin{itemize}
+  \item[$\triangleright$] Place one of the smaller gliders (glider \#1) to the left of the left photogate and the other small glider (glider \#2) to the right of the right photogate.
+  \item[$\triangleright$] Start the data collection on the \textbf{Capstone} program by pressing the red \textbf{Record} button. Once active the \textbf{Record} button will switch from a circle to a square. This indicates that the data acquisition is active and is recording data.
+  \item[$\triangleright$] Launch glider \#1 towards the bumper at the left end of the track and glider \#2 towards the bumper at the right end of the track.
+  \item[$\triangleright$] Make sure both gliders move through the photogates before colliding in the middle of the track between the two photogates. Wait until both gliders have fully passed through the photogates a second time. Catch the gliders before they pass through the photogates again.
+  \item[$\triangleright$] Stop the data collection on the \textbf{Capstone} program by pressing the \textbf{Record} button again. The button will switch from a square back to a circle again.
+  \item[$\triangleright$] All speeds of the gliders are displayed in the \textbf{Pasco} data table. Note the results in your data table, making sure that you add the correct signs to indicate the direction of travel.
+  \item[$\triangleright$] Calculate the initial momentum and compare it to the final momentum (Eqn.~\ref{eq:M07pi} and Eqn.~\ref{eq:M07pf}). Note all values in your data table.
+  \item[$\triangleright$] Calculate the initial kinetic energy and compare to the final kinetic energy. Note all values in your spreadsheet.
+  \item[$\triangleright$] Perform this part a total of 3 times.
+  \end{itemize}
+\end{itemize}
+
+% Unequal Masses
+\subsection{Collision between Unequal Masses}
+
+\begin{itemize}
+  % Unequal Masses, One at Rest
+\item[I.]As before, momentum conservation is given by Eqn.~\ref{eq:M07conservation} where the two masses $m_1$ and $m_2$ are no longer assumed to be equal.  Again we assume glider \#2 is initially at rest.
+
+  \begin{itemize}
+  \item[$\triangleright$] Place the larger glider (glider \#2) near the center of the track.
+  \item[$\triangleright$] Start the data collection on the \textbf{Capstone} program by pressing the red \textbf{Record} button. Once active the \textbf{Record} button will switch from a circle to a square. This indicates that the data acquisition is active and is recording data.
+  \item[$\triangleright$] Place one of the smaller gliders (glider \#1) on the track to the left of the left photogate and \underline{gently} launch it towards the bumper at the left end of the track.
+  \item[$\triangleright$] Let the two gliders collide in the middle of the track between the two photogates. Wait until both gliders have fully passed through the photogates after the collision. Catch the gliders before they pass through the photogates again.
+  \item[$\triangleright$] All speeds of the gliders are displayed in the \textbf{Pasco} data table. Note the results in your data table, making sure that you add the correct signs to indicate the direction of travel.
+  \item[$\triangleright$]Using a triple beam balance, find the masses of both gliders.
+  \item[$\triangleright$] Calculate the initial momentum and compare to the final momentum using Eqn.~\ref{eq:M07pi}--\ref{eq:M07pf}. Note all values in your data table.
+  \item[$\triangleright$] Calculate the initial kinetic energy and compare it to the final kinetic energy. Note all values in your data table.
+  \item[$\triangleright$] Perform this part a total of 3 times.
+  \end{itemize}
+
+  % Unequal Masses, Both Moving
+\item[II.] This case is similar to case II for equal masses that was described in detail above. Both gliders will be moving before the collision and, once again, none of the velocities are zero.  This time, however, two masses are not equal.
+
+  \begin{itemize}
+  \item[$\triangleright$] Place one of the smaller gliders (glider \#1) to the left of the left photogate and the larger glider (glider \#2) to the right of the right photogate.
+  \item[$\triangleright$] Start the data collection on the \textbf{Capstone} program by pressing the red \textbf{Record} button. Once active the \textbf{Record} button will switch from a circle to a square. This indicates that the data acquisition is active and is recording data.
+  \item[$\triangleright$] Launch glider \#1 towards the bumper at the left end of the track and glider \#2 towards the bumper at the right end of the track.
+  \item[$\triangleright$] Make sure both gliders move through the photogates before colliding in the middle of the track between the two photogates. Wait until both gliders have fully passed through the photogates a second time. Catch the gliders before they pass through the photogates again.
+  \item[$\triangleright$] Stop the data collection on the \textbf{Capstone} program by pressing the \textbf{Record} button again. The button will switch from a square back to a circle again.
+  \item[$\triangleright$] All speeds of the gliders are displayed in the \textbf{Pasco} data table. Note the results in the data table, making sure that you add the correct signs to indicate the direction of travel.
+  \item[$\triangleright$] Calculate the initial momentum and compare to the final momentum . Note all values in your data table.
+  \item[$\triangleright$] Calculate the initial kinetic energy and compare to the final kinetic energy. Note all values in your data table.
+  \item[$\triangleright$] Perform this part a total of 3 times.
+  \end{itemize}
+\end{itemize}
+
+% Inelastic Collision between Two Masses
+\subsection{Inelastic Collision Between Two Masses}
+
+In this collision the two gliders will couple together after the collision, instead of bouncing off each other. Despite the fact that the collision looks very different as compared to before, momentum conservation still holds for this type of collision.
+%
+Since glider \#2 is initially at rest,  $\vec{v}_2 = 0$.  After the collision, the final velocities of the two gliders are the same (they couple), $\vec{v}_1^\prime = \vec{v}_2^\prime \equiv \vec{v}_f^\prime$. Therefore the momentum of the system after the collision is $(m_1 + m_2) \vec{v}_f^\prime$.
+
+\begin{itemize}
+\item[$\triangleright$] Place the gliders with the magnets onto the track, glider \#1 to the left of the left photogate and glider \#2 in the middle between the two photogates.
+\item[$\triangleright$] Start the data collection on the \textbf{Capstone} program by pressing the red \textbf{Record} button. Once active the \textbf{Record} button will switch from a circle to a square. This indicates that the data acquisition is active and is recording data.
+\item[$\triangleright$] \underline{GENTLY} launch glider \#1 towards the bumper at the left end of the track.
+\item[$\triangleright$] Let the two gliders collide and wait until \underline{BOTH} gliders have fully passed through the second photogate. Catch the gliders before they pass through the photogates again.
+\item[$\triangleright$] Stop the data collection on the \textbf{Capstone} program by pressing the \textbf{Record} button again. The button will switch from a square back to a circle again.
+\item[$\triangleright$] The speed of glider \#1 before the collision ($v_1$) and the speeds of glider \#1 and glider \#2 after the collision ($v_1^\prime$ and $v_2^\prime$) are displayed in the \textbf{Pasco} data table. Note the results in the data table.
+\item[$\triangleright$] Using a triple beam balance, find the masses of both gliders.  Calculate the initial momentum and compare it to the final momentum . Note all values in your data table.
+\item[$\triangleright$] Calculate the initial kinetic energy and compare to the final kinetic energy. Note all values in your data table.
+\item[$\triangleright$] Perform this part a total of 3 times.
+\end{itemize}
+% End of experimental section
+%\clearpage
+
+\section{Data Analysis}
+
+In this experiment you have two cases with equal masses, two cases with unequal masses, and one inelastic case for a total of five cases. There are three tables for each case:
+\begin{itemize}
+\item[$\triangleright$] A common data table with the masses of the two gliders used for the case.
+\item[$\triangleright$] A table with the results for each trial in the case.
+  \begin{itemize}
+  \item the velocities $v_1, v_1^\prime, v_2, v_2^\prime $.
+  \item the momenta $p_1, p_1^\prime, p_2, p_2^\prime, p_{\mbox{\mbox{tot}}}=p_1 + p_2, p_{\mbox{\mbox{tot}}}^\prime=p_1^\prime + p_2^\prime, p_{\mbox{\mbox{tot}}}-p_{\mbox{\mbox{tot}}}^\prime$.
+  \item the kinetic energies $E_1, E_1^\prime, E_2, E_2^\prime, E_{\mbox{\mbox{tot}}}=E_1 + E_2, E_{\mbox{\mbox{tot}}}^\prime=E_1^\prime + E_2^\prime,E_{\mbox{\mbox{tot}}}-E_{\mbox{\mbox{tot}}}^\prime$.
+  \end{itemize}
+\item[$\triangleright$] A table summarizing the analysis for the case.
+  \begin{itemize}
+  \item $E_{\rm tot }$ loss.
+  \item $p_{\rm tot }$ change.
+  \end{itemize}
+\end{itemize}
+
+% Interpretation of Results
+\section{Testing your Understanding}
+
+\begin{enumerate}
+  %1
+\item A glider of mass $m_1 = 4\,\kilo\gram$ has a velocity of $v_1 = +2\,\metre\per\second$ before colliding with a second glider of mass $m_2 = 4\,\kilo\gram$, initially at rest. After the collision the first glider comes to a stop, while the second glider moves with a final velocity of $v_2^\prime = +2\,\metre\per\second$. This collision
+  \begin{enumerate}
+  \item conserves momentum and energy.
+  \item conserves momentum but does not conserve energy.
+  \item does not conserve momentum but does conserve energy.
+  \item does not conserves momentum nor energy.
+  \end{enumerate}
+  %2
+\item  A glider of mass $m_1 = 4\,\kilo\gram$ has a velocity $v_1 = +2\,\metre\per\second$ before colliding with a second glider of mass $m_2 = 6\,\kilo\gram$, moving with velocity $v_2 = -4\,\metre\per\second$.  After the collision the first glider has a velocity of $v_1^\prime = -1\,\metre\per\second$. This collision is
+  \begin{enumerate}
+  \item Elastic.
+  \item Partially inelastic.
+  \item Totally inelastic.
+  \item Impossible.
+  \end{enumerate}
+  %3
+\item  A glider of mass $m_1 = 8\,\kilo\gram$ has a velocity $v_1 = +2\,\metre\per\second$ before colliding with a second glider of mass $m_2 = 4\,\kilo\gram$, moving with velocity $v_2 = -4\,\metre\per\second$.  After the collision the first glider has a velocity of $v_1^\prime = -1\,\metre\per\second$. The final velocity $v_2^\prime$ of the second glider is
+  \begin{enumerate}
+  \item $v_2^\prime = +2\,\metre\per\second$
+  \item $v_2^\prime = -2\,\metre\per\second$
+  \item $v_2^\prime = +4.8\,\metre\per\second$
+  \item $v_2^\prime = -4.8\,\metre\per\second$
+  \end{enumerate}
+  %4
+\item  A glider of mass $m_1 = 8\,\kilo\gram$ has a velocity $v_1 = +2\,\metre\per\second$ before colliding with a second glider of mass $m_2 = 4\,\kilo\gram$, moving with velocity $v_2 = -4\,\metre\per\second$.  After the collision the first glider has a velocity of $v_1^\prime = -1\,\metre\per\second$. This collision is
+  \begin{enumerate}
+  \item Elastic.
+  \item Partially inelastic.
+  \item Totally inelastic.
+  \item Impossible.
+  \end{enumerate}
+  %5
+\item  A glider of mass $m_1 = 5\,\kilo\gram$ has a velocity $v_1 = +4\,\metre\per\second$ before colliding with a second glider of mass $m_2 = 15\,\kilo\gram$, initially at rest.  After the collision the two glider couple together. The velocity $v^\prime$ of the two gliders after the collision is
+  \begin{enumerate}
+  \item $v^\prime = +1\,\metre\per\second$
+  \item $v^\prime = -1\,\metre\per\second$
+  \item $v^\prime = +2\,\metre\per\second$
+  \item $v^\prime = -2\,\metre\per\second$
+  \end{enumerate}
+  %6
+\item  A glider of mass $m_1 = 5\,\kilo\gram$ has a velocity $v_1 = +4\,\metre\per\second$ before colliding with a second glider of mass $m_2 = 15\,\kilo\gram$, initially at rest.  After the collision the two glider couple together.  This collision is
+  \begin{enumerate}
+  \item Elastic.
+  \item Partially inelastic.
+  \item Totally inelastic.
+  \item Impossible.
+  \end{enumerate}
+  %7
+\item  When performing the measurement with both masses moving, the direction of motion is
+  \begin{enumerate}
+  \item Determined automatically by the Pasco software.
+  \item Not needed in determining the total momentum.
+  \item Must be observed and entered `by hand'.
+  \item Cancels out between the initial and final momentum.
+  \end{enumerate}
+\end{enumerate}
+
+% Experimental Procedure
+\section{Interpretation of Results}
+
+\begin{itemize}
+\item[$\triangleright$] Discuss whether the total momentum $\vec{p}_{\mbox{\mbox{tot}}}$ is conserved in each of the 5 cases. Explain differences between $\vec{p}_{\mbox{\mbox{tot}}}$ before and $\vec{p}_{\mbox{\mbox{tot}}}$ after the collision, bearing also in mind that your values may have a measurement uncertainty.
+\item[$\triangleright$] Discuss whether the total energy $E_{\mbox{\mbox{tot}}}$ is conserved in each of the 5 cases. Explain differences between $E_{\mbox{\mbox{tot}}}$ before and $E_{\mbox{\mbox{tot}}}$ after the collision, bearing also in mind that your values may have a measurement uncertainty.
+\item[$\triangleright$] Discuss the forces acting on each glider during each of the collisions. You need not give a numerical value, but you should explain how magnitude and direction compare.
+\end{itemize}

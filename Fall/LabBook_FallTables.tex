@@ -1,0 +1,78 @@
+
+\documentclass[11pt]{book}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ...
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{microtype}
+\usepackage{nicefrac}
+\usepackage[pagestyles,raggedright]{titlesec}
+\usepackage{xr}
+\externaldocument{LabBook_Fall}
+
+\setlength{\textheight}{625 pt}
+
+\renewcommand{\chaptername}{}
+\renewcommand{\thechapter}{}
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
+
+% Tables stuff
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{\bf{LABORATORY MANUAL}}
+\author{DEPARTMENT OF PHYSICS\\
+FAIRFIELD UNIVERSITY\\
+\\
+FALL 2019}
+%\date{}                                           % Activate to display a given date or no date
+%
+%
+%% titlesec stuff
+\newpagestyle{main}{%
+  \headrule
+  \sethead[\chaptertitle][][]{}{}{\chaptertitle}
+  \setfoot[\thepage][][]{}{}{\thepage}
+}
+\pagestyle{main}
+
+% This option removes the Section Number
+\setcounter{secnumdepth}{-2}
+
+\setlength{\itemsep}{-5pt}
+
+\begin{document}
+
+\maketitle
+%\tableofcontents
+%
+%\include{Introduction} % Introduction
+%\include{ErrorAnalysis} % ErrorAnalysis
+%\include{GraphicalRepresentation} % GraphicalRepresentation
+%\include{VernierCalipers} % VernierCalipers
+%\include{DataAcquisition} % DataAcquisition
+%\include{Experiment01} % M-1: Force Table included tilting the table in the procedure.
+%\include{Experiment02} % M-2: Measurement of the Acceleration of an Object Due to Gravity
+%\include{Experiment03} % M-3: The Measurement of ${\bm g}$ with a Simple Pendulum
+%\include{Experiment08} % M-4: Centripetal Force
+%\include{Experiment04} % M-5: Conservation of Energy
+%\include{Experiment05} % M-6: The Ballistic Pendulum and Projectile Motion
+%\include{Experiment06} % M-7: Conservation of Linear Momentum
+%\include{Experiment09} % M-8: Rotational Motion
+%\include{Experiment07} % M-9: Harmonic Motion
+%\include{Experiment10} % H-1: Ideal Gas Law
+
+\include{FallLabDataTables} % comment out to compile lab manual without tables
+\end{document}
